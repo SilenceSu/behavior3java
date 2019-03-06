@@ -16,11 +16,12 @@ public class BevTreeConfig {
 
 
     /**
-     * 获取行为树配置
+     * 加载行为树配置
+     *
      * @param path
      * @return
      */
-    public BTTreeCfg LoadTreeCfg(String path) {
+    public static BTTreeCfg LoadTreeCfg(String path) {
         BTTreeCfg treeCfg;
         String text = FileUtil.readFile(path);
         treeCfg = JSON.parseObject(text, BTTreeCfg.class);
@@ -30,6 +31,7 @@ public class BevTreeConfig {
 
     /**
      * 获取节点配置的文件
+     *
      * @param cfg
      * @param name
      * @param <T>
@@ -39,12 +41,10 @@ public class BevTreeConfig {
 
         Map<String, String> props = cfg.getProperties();
         if (props != null) {
-            return (T)props.get(name);
+            return (T) props.get(name);
         }
         return null;
     }
-
-
 
 
 }

@@ -19,7 +19,6 @@ public abstract class BaseNode implements INode, INodeWorker {
 
     private String id;
     private String name;
-    private String category;
     private String title;
     private String description;
 

@@ -1,5 +1,7 @@
 package com.sh.b3.core;
 
+import com.sh.b3.constant.B3Const;
+
 /**
  * 条件节点 叶节点
  * @author SilenceSu
@@ -8,4 +10,8 @@ package com.sh.b3.core;
  */
 public abstract class Condition extends BaseNode implements ICondition {
 
+    @Override
+    public String getCategory() {
+        return B3Const.CONDITION;
+    }
 }

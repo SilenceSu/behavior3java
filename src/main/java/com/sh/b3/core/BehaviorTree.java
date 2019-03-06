@@ -2,6 +2,7 @@ package com.sh.b3.core;
 
 import com.sh.b3.config.BTNodeCfg;
 import com.sh.b3.config.BTTreeCfg;
+import com.sh.b3.config.DefaultNodes;
 import com.sh.b3.constant.B3Const;
 import com.sh.b3.constant.B3Status;
 import lombok.Data;
@@ -28,15 +29,24 @@ public class BehaviorTree {
     private String description;
     private Map<String, Object> properties = new HashMap<>();
 
-
     private BaseNode root;
 
+
+
+    public void load(BTTreeCfg cfg) {
+        load(cfg, new HashMap<>());
+    }
 
     public void load(BTTreeCfg cfg, Map<String, Class<? extends BaseNode>> maps) {
 
         this.titile = cfg.getTitle();
         this.description = cfg.getDescription();
         this.properties = cfg.getProperties();
+
+        Map<String, Class<? extends BaseNode>> nodeMaps = new HashMap<>(DefaultNodes.get());
+        if (maps != null && maps.size() > 0) {
+            nodeMaps.putAll(maps);
+        }
 
 
         Map<String, BaseNode> nodes = new HashMap<>();
@@ -48,7 +58,7 @@ public class BehaviorTree {
             BTNodeCfg nodeCfg = nodeEntry.getValue();
 
             BaseNode node = null;
-            Class<? extends BaseNode> clazz = maps.get(nodeCfg.getName());
+            Class<? extends BaseNode> clazz = nodeMaps.get(nodeCfg.getName());
             if (clazz != null) {
                 try {
                     node = clazz.newInstance();

@@ -1,4 +1,4 @@
-package com.sh.b3.loader;
+package com.sh.b3.config;
 
 import com.sh.b3.actions.Error;
 import com.sh.b3.actions.*;
@@ -6,22 +6,19 @@ import com.sh.b3.composites.MemPriority;
 import com.sh.b3.composites.MemSequence;
 import com.sh.b3.composites.Priority;
 import com.sh.b3.composites.Sequence;
-import com.sh.b3.config.BTTreeCfg;
 import com.sh.b3.core.BaseNode;
-import com.sh.b3.core.BehaviorTree;
 import com.sh.b3.decorators.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * bv树节点
- *
+ * 默认节点
  * @author SilenceSu
  * @Email Silence.Sx@Gmail.com
- * Created by Silence on 2019/3/2.
+ * Created by Silence on 2019/3/6.
  */
-public class BvTreeFactory {
+public class DefaultNodes {
     /**
      * 注册支持的节点
      * key name
@@ -57,22 +54,8 @@ public class BvTreeFactory {
 
     }
 
-
-
-    public static BehaviorTree createBtTreeFromConfig(BTTreeCfg cfg) {
-
-        BehaviorTree bTTree = new BehaviorTree();
-        bTTree.load(cfg, defaultNodes);
-        return bTTree;
+    public static Map<String,Class<? extends BaseNode>> get(){
+        return defaultNodes;
     }
-
-    public static BehaviorTree createBtTreeFromConfig(BTTreeCfg cfg, Map<String, Class<? extends BaseNode>> extNodes) {
-
-        BehaviorTree bTTree = new BehaviorTree();
-        defaultNodes.putAll(extNodes);
-        bTTree.load(cfg, defaultNodes);
-        return bTTree;
-    }
-
 
 }
