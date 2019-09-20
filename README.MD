@@ -8,14 +8,16 @@
 
 
 ### 结果
-行为树图
+- 行为树图
+
 ![行为树图](src/test/resources/tree.png)
-运行结果
+- 运行结果
+
 ![执行结果](src/test/resources/tree_run.png)
 
 
 
-#行为树介绍
+# 行为树介绍
 ### 行为树 4大基本类型节点
 
 - Composite  Node   组合节点
