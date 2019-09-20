@@ -1,5 +1,22 @@
+#behavior3java
+基于behavior3edit行为树的java版本。
 
-## 行为树 4大基本类型节点
+
+### 编辑器
+- https://github.com/behavior3/behavior3editor  源码
+- https://github.com/magicsea/behavior3editor/releases 桌面版本
+
+
+### 结果
+行为树图
+![行为树图](https://raw.githubusercontent.com/SilenceSu/behavior3java/master/src/test/resources/tree.png?token=AAXRX4QCZZQYJWKCNOASS4S5QS6LM)
+运行结果
+![执行结果](https://raw.githubusercontent.com/SilenceSu/behavior3java/master/src/test/resources/tree_run.png?token=AAXRX4QPEAL2ZV6BLUGDUZ25QS6V4)
+
+
+
+#行为树介绍
+### 行为树 4大基本类型节点
 
 - Composite  Node   组合节点
 - Decorator  Node   修饰节点
@@ -7,13 +24,12 @@
 - Action     Node   动作节点(叶节点)
 
 
-####  行为树节点状态
+###  行为树节点状态
 
- -SUCCESS 节点执行成功
- -FAILED  节点失败
- -RUNNING 节点正在运行
- -ERROR   程序错误
-
+- SUCCESS 节点执行成功
+- FAILED  节点失败
+- RUNNING 节点正在运行
+- ERROR   程序错误
 
 
 #### Composite 节点子类
@@ -66,5 +82,16 @@ Parallel Hybird Node: 指定数量的Child Node返回True或False后才决定结
 
 
 
-### 编辑器
-https://github.com/behavior3/behavior3editor
+
+
+
+
+# 行为树相关学习
+- http://www.aisharing.com/archives/90#comment-238610
+- https://www.behaviac.com/concepts/
+- https://note.youdao.com/ynoteshare1/index.html?id=4f46dc2144ea62b55f597630f5e666b4&type=note
+
+#相关项目
+- https://github.com/magicsea/behavior3go
+- https://github.com/behavior3/behavior3js
+- https://github.com/behavior3/behavior3py
