@@ -9,9 +9,9 @@
 
 ### 结果
 行为树图
-![行为树图](https://raw.githubusercontent.com/SilenceSu/behavior3java/master/src/test/resources/tree.png?token=AAXRX4QCZZQYJWKCNOASS4S5QS6LM)
+![行为树图](src/test/resources/tree.png)
 运行结果
-![执行结果](https://raw.githubusercontent.com/SilenceSu/behavior3java/master/src/test/resources/tree_run.png?token=AAXRX4QPEAL2ZV6BLUGDUZ25QS6V4)
+![执行结果](src/test/resources/tree_run.png)
 
 
 
@@ -95,3 +95,6 @@ Parallel Hybird Node: 指定数量的Child Node返回True或False后才决定结
 - https://github.com/magicsea/behavior3go
 - https://github.com/behavior3/behavior3js
 - https://github.com/behavior3/behavior3py
+
+#QQ群
+669607652
