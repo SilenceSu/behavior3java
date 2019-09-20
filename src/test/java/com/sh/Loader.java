@@ -1,12 +1,16 @@
 package com.sh;
 
-import com.sh.b3.config.BTTreeCfg;
-import com.sh.b3.config.BevTreeConfig;
+import com.sh.b3.B3Loader;
+import com.sh.b3.actions.Log;
+import com.sh.b3.core.BaseNode;
 import com.sh.b3.core.BehaviorTree;
 import com.sh.b3.core.Blackboard;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * 测试
+ * 测试用例
  *
  * @author SilenceSu
  * @Email Silence.Sx@Gmail.com
@@ -16,17 +20,19 @@ public class Loader {
 
     public static void main(String[] args) {
 
+        //自定义扩展log
+        Map<String, Class<? extends BaseNode>> extendNodes = new HashMap<String, Class<? extends BaseNode>>() {
+            {
+                put("Log", Log.class);
+            }
+        };
 
-        BTTreeCfg btTreeCfg = BevTreeConfig.LoadTreeCfg("D:\\JProject\\behavior3java\\src\\main\\resources\\tree.json");
 
 
-        BehaviorTree tree = new BehaviorTree();
-        tree.load(btTreeCfg);
-
-
+        String confJson = Loader.class.getResource("/").getPath() + "tree.json";
+        BehaviorTree behaviorTree = B3Loader.loadB3Tree(confJson, extendNodes);
         Blackboard blackboard = new Blackboard();
-
-        tree.tick(new Object(), blackboard);
+        behaviorTree.tick(new Object(), blackboard);
 
 
     }

@@ -25,7 +25,7 @@
       "title": "Log",
       "description": "Log",
       "properties": {
-        "info": "log...22"
+        "info": "Sequence log"
       },
       "display": {
         "x": -144,
@@ -38,7 +38,7 @@
       "title": "Log",
       "description": "Log",
       "properties": {
-        "info": "log...11"
+        "info": "repeat *2 log"
       },
       "display": {
         "x": 96,
@@ -65,7 +65,7 @@
       "title": "Log",
       "description": "Log",
       "properties": {
-        "info": "log...333"
+        "info": "limit log"
       },
       "display": {
         "x": 108,

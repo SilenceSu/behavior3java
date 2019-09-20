@@ -29,7 +29,7 @@ public class Log extends Action {
 
     @Override
     public B3Status onTick(Tick tick) {
-        log.info("log:{}", this.info);
+        log.info("action-log:{}", this.info);
         return B3Status.SUCCESS;
     }
 
