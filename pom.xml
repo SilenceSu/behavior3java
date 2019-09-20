@@ -6,15 +6,7 @@
 
     <groupId>com.sh.b3</groupId>
     <artifactId>behavior3java</artifactId>
-    <version>0.1</version>
-
-    <!-- nexus 发布地址 -->
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>http://192.168.5.83:8081/repository/fantasy_release/</url>
-        </repository>
-    </distributionManagement>
+    <version>0.1.1</version>
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>

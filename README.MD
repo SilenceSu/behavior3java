@@ -93,10 +93,10 @@ Parallel Hybird Node: 指定数量的Child Node返回True或False后才决定结
 - https://www.behaviac.com/concepts/
 - https://note.youdao.com/ynoteshare1/index.html?id=4f46dc2144ea62b55f597630f5e666b4&type=note
 
-#相关项目
+# 相关项目
 - https://github.com/magicsea/behavior3go
 - https://github.com/behavior3/behavior3js
 - https://github.com/behavior3/behavior3py
 
-#QQ群
+# QQ群
 669607652
