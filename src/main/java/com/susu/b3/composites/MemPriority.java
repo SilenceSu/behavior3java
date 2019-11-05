@@ -31,9 +31,11 @@ public class MemPriority extends Composite {
                 if (status == B3Status.RUNNING) {
                     tick.getBlackboard().setParam(B3Const.RUNNING_CHILD, i, tick.getTree().getId(), this.getId());
                 }
+
+                return status;
+
             }
 
-            return status;
 
 
         }
