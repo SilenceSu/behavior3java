@@ -1,4 +1,4 @@
-#behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java)
+# behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java)
 
 基于behavior3edit行为树的java版本。
 
