@@ -1,10 +1,10 @@
 package com.susu;
 
-import com.susu.b3.B3Loader;
-import com.susu.b3.actions.Log;
-import com.susu.b3.core.BaseNode;
-import com.susu.b3.core.BehaviorTree;
-import com.susu.b3.core.Blackboard;
+import org.behavior3.b3.B3Loader;
+import org.behavior3.b3.actions.Log;
+import org.behavior3.b3.core.BaseNode;
+import org.behavior3.b3.core.BehaviorTree;
+import org.behavior3.b3.core.Blackboard;
 
 import java.util.HashMap;
 import java.util.Map;
