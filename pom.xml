@@ -4,9 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sh.b3</groupId>
+    <groupId>github.com.SilenceSu</groupId>
     <artifactId>behavior3java</artifactId>
     <version>0.1.1</version>
+    <description>基于behavior3edit行为树的java版</description>
+    <url>https://github.com/SilenceSu/behavior3java</url>
+
+    <developers>
+        <developer>
+            <name>Silence</name>
+            <email>Silence.sx@gmail.com</email>
+        </developer>
+    </developers>
+
+
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -55,6 +66,7 @@
                 <version>2.4</version>
 
             </plugin>
+
 
         </plugins>
     </build>

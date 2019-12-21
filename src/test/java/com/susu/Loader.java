@@ -1,10 +1,10 @@
 package com.susu;
 
-import org.behavior3.b3.B3Loader;
-import org.behavior3.b3.actions.Log;
-import org.behavior3.b3.core.BaseNode;
-import org.behavior3.b3.core.BehaviorTree;
-import org.behavior3.b3.core.Blackboard;
+import com.github.silencesu.behavior3java.B3Loader;
+import com.github.silencesu.behavior3java.actions.Log;
+import com.github.silencesu.behavior3java.core.BaseNode;
+import com.github.silencesu.behavior3java.core.BehaviorTree;
+import com.github.silencesu.behavior3java.core.Blackboard;
 
 import java.util.HashMap;
 import java.util.Map;
