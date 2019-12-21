@@ -18,6 +18,13 @@
         </developer>
     </developers>
 
+    <licenses>
+        <license>
+            <name>Mulan Permissive Software License，Version 1</name>
+            <url>https://license.coscl.org.cn/MulanPSL</url>
+        </license>
+    </licenses>
+
 
     <distributionManagement>
         <snapshotRepository>
@@ -32,6 +39,16 @@
     </distributionManagement>
 
 
+    <scm>
+        <connection>scm:git:git@github.com:SilenceSu/behavior3java.git</connection>
+        <developerConnection>scm:git:git@github.com:SilenceSu/behavior3java.git</developerConnection>
+        <url>https://github.com/SilenceSu/behavior3java</url>
+    </scm>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -65,15 +82,26 @@
     </dependencies>
 
     <build>
+        <finalName>behavior3java</finalName>
         <pluginManagement>
+
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>8</source>
+                        <target>8</target>
+                    </configuration>
+                </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>2.2.1</version>
                     <executions>
                         <execution>
-                            <id>attach-sources</id>
+                            <phase>package</phase>
                             <goals>
                                 <goal>jar-no-fork</goal>
                             </goals>
@@ -83,47 +111,43 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.10.3</version>
+                    <version>3.1.1</version>
                     <executions>
                         <execution>
-                            <id>attach-javadocs</id>
+                            <phase>package</phase>
                             <goals>
                                 <goal>jar</goal>
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
 
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>8</source>
-                        <target>8</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+
+                        <outputDirectory>${basedir}</outputDirectory>
+                        <reportOutputDirectory>${basedir}</reportOutputDirectory>
+
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.7</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>nexus-release</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.4</version>
-
                 </plugin>
-                <!-- 生成java source.jar -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
 
             </plugins>
         </pluginManagement>

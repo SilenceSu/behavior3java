@@ -1,6 +1,5 @@
-package com.susu;
+package com.github.silencesu.behavior3java;
 
-import com.github.silencesu.behavior3java.B3Loader;
 import com.github.silencesu.behavior3java.actions.Log;
 import com.github.silencesu.behavior3java.core.BaseNode;
 import com.github.silencesu.behavior3java.core.BehaviorTree;
