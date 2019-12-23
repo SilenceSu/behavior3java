@@ -28,19 +28,6 @@
     </licenses>
 
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-
-        <repository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-
     <scm>
         <connection>scm:git:git@github.com:SilenceSu/behavior3java.git</connection>
         <developerConnection>scm:git:git@github.com:SilenceSu/behavior3java.git</developerConnection>
@@ -118,21 +105,6 @@
                 <version>2.4</version>
             </plugin>
 
-            <!-- gpg plugin,用于签名认证 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <!--staging puglin,用于自动执行发布阶段(免手动)-->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
@@ -186,6 +158,44 @@
         </dependency>
 
     </dependencies>
+    <profiles>
+        <profile>
+            <id>deployMvnCenter</id>
+            <build>
+                <plugins>
+                    <!-- gpg plugin,用于签名认证 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+
+                <repository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+
+        </profile>
+
+    </profiles>
 
 
 </project>
