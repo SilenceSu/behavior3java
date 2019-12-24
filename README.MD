@@ -1,12 +1,20 @@
-# behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java)
+# behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java) [![maven](https://maven-badges.herokuapp.com/maven-central/com.github.silencesu/behavior3java/badge.svg)](https://search.maven.org/search?q=g:xyz.noark)
 
-基于behavior3edit行为树的java版本。
 
 
 ### 编辑器
 - https://github.com/behavior3/behavior3editor  源码
 - https://github.com/magicsea/behavior3editor/releases 桌面版本
 
+### 引用
+```
+<dependency>
+  <groupId>com.github.silencesu</groupId>
+  <artifactId>behavior3java</artifactId>
+  <version>1.0.0</version>
+</dependency>
+
+```
 
 ### 结果
 - 行为树图
