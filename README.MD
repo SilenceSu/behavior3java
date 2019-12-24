@@ -1,4 +1,4 @@
-# behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java) [![maven](https://maven-badges.herokuapp.com/maven-central/com.github.silencesu/behavior3java/badge.svg)](https://search.maven.org/search?q=g:xyz.noark)
+# behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java) [![maven](https://maven-badges.herokuapp.com/maven-central/com.github.silencesu/behavior3java/badge.svg)](https://search.maven.org/search?q=behavior3java)
 
 
 
