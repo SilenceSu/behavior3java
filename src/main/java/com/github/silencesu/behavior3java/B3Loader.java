@@ -22,15 +22,17 @@ public class B3Loader {
     private final static HashMap<String,BTTreeCfg> treeMaps = new HashMap<>(16);
     /**
      * 初始化行为树数据
-     * @param treeJsonPath
+     * @param projectJsonPath
+     * @return
      */
-    public static void initB3Trees(String projectJsonPath) {
+    public static List<BTTreeCfg> initB3Trees(String projectJsonPath) {
         List<BTTreeCfg> btTreeCfgList = BevTreeConfig.LoadTreesCfg(projectJsonPath);
         if(btTreeCfgList != null) {
             for (BTTreeCfg btTreeCfg : btTreeCfgList) {
                 treeMaps.put(btTreeCfg.getId(), btTreeCfg);
             }
         }
+        return btTreeCfgList;
     }
     /**
      * 初始化行为树数据

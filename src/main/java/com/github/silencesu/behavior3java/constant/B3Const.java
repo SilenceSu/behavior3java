@@ -12,6 +12,8 @@ public class B3Const {
     public static final String DECORATOR = "decorator";
     public static final String ACTION = "action";
     public static final String CONDITION = "condition";
+    public static final String SUBTREE = "tree";
+    public static final String SUBTREE_CLAZZ = "SubTree";
 
 
 
