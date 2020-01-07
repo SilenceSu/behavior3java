@@ -7,6 +7,7 @@ import com.github.silencesu.behavior3java.composites.MemSequence;
 import com.github.silencesu.behavior3java.composites.Priority;
 import com.github.silencesu.behavior3java.composites.Sequence;
 import com.github.silencesu.behavior3java.core.BaseNode;
+import com.github.silencesu.behavior3java.core.SubTree;
 import com.github.silencesu.behavior3java.decorators.*;
 
 import java.util.HashMap;
@@ -35,6 +36,7 @@ public class DefaultNodes {
         defaultNodes.put("Runner", Runner.class);
         defaultNodes.put("Succeeder", Succeeder.class);
         defaultNodes.put("Wait", Wait.class);
+        defaultNodes.put("SubTree", SubTree.class);
 
         //composites
         defaultNodes.put("MemPriority", MemPriority.class);
@@ -51,6 +53,13 @@ public class DefaultNodes {
         defaultNodes.put("RepeatUntilSuccess", RepeatUntilSuccess.class);
 
 
+    }
+    /**
+     * 扩充Nodes节点
+     */
+    public static Map<String,Class<? extends BaseNode>> extendCustomNodes(Map<String,Class<? extends BaseNode>> maps) {
+        defaultNodes.putAll(maps);
+        return defaultNodes;
     }
 
     public static Map<String,Class<? extends BaseNode>> get(){

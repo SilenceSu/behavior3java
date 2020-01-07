@@ -20,6 +20,7 @@ public class B3Const {
     public static final String RUNNING_CHILD = "runningChild";
     public static final String MAX_LOOP = "maxLoop";
     public static final String MAX_TIME = "maxTime";
+    public static final String END_TIME = "milliseconds";
 
 
 

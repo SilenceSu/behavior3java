@@ -18,7 +18,7 @@ public class Wait extends Action {
     @Override
     public void initialize(BTNodeCfg nodeCfg) {
         super.initialize(nodeCfg);
-        String ml = nodeCfg.getProperties().get(B3Const.MAX_LOOP);
+        String ml = nodeCfg.getProperties().get(B3Const.END_TIME);
         endTime = Long.valueOf(ml);
 
     }

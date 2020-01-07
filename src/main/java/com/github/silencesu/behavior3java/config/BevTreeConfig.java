@@ -1,8 +1,11 @@
 package com.github.silencesu.behavior3java.config;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.github.silencesu.behavior3java.util.FileUtil;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,6 +29,18 @@ public class BevTreeConfig {
         String text = FileUtil.readFile(path);
         treeCfg = JSON.parseObject(text, BTTreeCfg.class);
         return treeCfg;
+    }
+    /**
+     * 加载
+     * @param path
+     * @return
+     */
+    public static List<BTTreeCfg> LoadTreesCfg(String path) {
+        String text = FileUtil.readFile(path);
+        JSONObject jsonObj = JSON.parseObject(text);
+        JSONArray trees = jsonObj.getJSONArray("trees");
+        List<BTTreeCfg> list = trees.toJavaList(BTTreeCfg.class);
+        return list;
     }
 
 
