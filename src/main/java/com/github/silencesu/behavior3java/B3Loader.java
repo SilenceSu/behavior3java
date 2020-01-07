@@ -7,6 +7,7 @@ import com.github.silencesu.behavior3java.core.BehaviorTree;
 import com.github.silencesu.behavior3java.core.BaseNode;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,7 +24,19 @@ public class B3Loader {
      * 初始化行为树数据
      * @param treeJsonPath
      */
-    public static void initB3Trees(String treeJsonPath) {
+    public static void initB3Trees(String projectJsonPath) {
+        List<BTTreeCfg> btTreeCfgList = BevTreeConfig.LoadTreesCfg(projectJsonPath);
+        if(btTreeCfgList != null) {
+            for (BTTreeCfg btTreeCfg : btTreeCfgList) {
+                treeMaps.put(btTreeCfg.getId(), btTreeCfg);
+            }
+        }
+    }
+    /**
+     * 初始化行为树数据
+     * @param treeJsonPath
+     */
+    public static void initB3Tree(String treeJsonPath) {
         BTTreeCfg btTreeCfg = BevTreeConfig.LoadTreeCfg(treeJsonPath);
         treeMaps.put(btTreeCfg.getId(), btTreeCfg);
     }

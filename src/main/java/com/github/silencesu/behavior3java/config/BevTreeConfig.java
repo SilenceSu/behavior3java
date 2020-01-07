@@ -31,7 +31,7 @@ public class BevTreeConfig {
         return treeCfg;
     }
     /**
-     * 加载
+     * 加载项目工程，将整个行为树都加载了
      * @param path
      * @return
      */
