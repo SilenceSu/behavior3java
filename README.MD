@@ -36,7 +36,7 @@ BehaviorTree behaviorTree = B3Loader.loadB3Tree(confJson, extendNodes);
 ```
 //加载整个工程文件
 BehaviorTreeProject behaviorTreeProject = B3Loader.loadB3Project(confJson, extendNodes);
-BehaviorTree behaviorTree = behaviorTreeProject.findBTTreeByTitle("b1");//获取名字为b1的属
+BehaviorTree behaviorTree = behaviorTreeProject.findBTTreeByTitle("b1");//获取名字为b1的树
 
 ```
 
