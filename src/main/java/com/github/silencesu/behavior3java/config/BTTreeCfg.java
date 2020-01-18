@@ -12,6 +12,7 @@ import java.util.Map;
  */
 @Data
 public class BTTreeCfg {
+    private String id;
     private String title;
     private String description;
     private String root;

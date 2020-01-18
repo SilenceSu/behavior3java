@@ -2,9 +2,12 @@ package com.github.silencesu.behavior3java;
 
 import com.github.silencesu.behavior3java.config.BTTreeCfg;
 import com.github.silencesu.behavior3java.config.BevTreeConfig;
+import com.github.silencesu.behavior3java.config.DefaultNodes;
 import com.github.silencesu.behavior3java.core.BehaviorTree;
 import com.github.silencesu.behavior3java.core.BaseNode;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +19,29 @@ import java.util.Map;
  */
 public class B3Loader {
 
+    private final static HashMap<String,BTTreeCfg> treeMaps = new HashMap<>(16);
+    /**
+     * 初始化行为树数据
+     * @param projectJsonPath
+     * @return
+     */
+    public static List<BTTreeCfg> initB3Trees(String projectJsonPath) {
+        List<BTTreeCfg> btTreeCfgList = BevTreeConfig.LoadTreesCfg(projectJsonPath);
+        if(btTreeCfgList != null) {
+            for (BTTreeCfg btTreeCfg : btTreeCfgList) {
+                treeMaps.put(btTreeCfg.getId(), btTreeCfg);
+            }
+        }
+        return btTreeCfgList;
+    }
+    /**
+     * 初始化行为树数据
+     * @param treeJsonPath
+     */
+    public static void initB3Tree(String treeJsonPath) {
+        BTTreeCfg btTreeCfg = BevTreeConfig.LoadTreeCfg(treeJsonPath);
+        treeMaps.put(btTreeCfg.getId(), btTreeCfg);
+    }
 
     /**
      * @param treeJson    行为树配置文件
@@ -38,8 +64,12 @@ public class B3Loader {
 
     }
 
-    public static BehaviorTree loadB3Tree(String treeJson) {
-        return loadB3Tree(treeJson, null);
+    public static BehaviorTree loadB3Tree(String treeId) {
+        BTTreeCfg btTreeCfg = treeMaps.get(treeId);
+        //load treecfg
+        BehaviorTree tree = new BehaviorTree();
+        tree.load(btTreeCfg);
+        return tree;
     }
 
 

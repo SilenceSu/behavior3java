@@ -19,6 +19,7 @@ public class BTNodeCfg {
     private String id;
     private String name;
     private String title;
+    private String category;
     private String description;
     private List<String> children;
     private String child;

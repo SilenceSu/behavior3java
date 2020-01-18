@@ -12,6 +12,8 @@ public class B3Const {
     public static final String DECORATOR = "decorator";
     public static final String ACTION = "action";
     public static final String CONDITION = "condition";
+    public static final String SUBTREE = "tree";
+    public static final String SUBTREE_CLAZZ = "SubTree";
 
 
 
@@ -20,6 +22,7 @@ public class B3Const {
     public static final String RUNNING_CHILD = "runningChild";
     public static final String MAX_LOOP = "maxLoop";
     public static final String MAX_TIME = "maxTime";
+    public static final String END_TIME = "milliseconds";
 
 
 
