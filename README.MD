@@ -1,28 +1,66 @@
 # behavior3java [![Build Status](https://travis-ci.org/SilenceSu/behavior3java.svg?branch=master)](https://travis-ci.org/SilenceSu/behavior3java) [![maven](https://maven-badges.herokuapp.com/maven-central/com.github.silencesu/behavior3java/badge.svg)](https://search.maven.org/search?q=behavior3java)
 
 
+### Overview 
+    behavior3java是一套与behavior3editor编辑器相配套的行为树框架。
 
 ### 编辑器
 - https://github.com/behavior3/behavior3editor  源码
 - https://github.com/magicsea/behavior3editor/releases 桌面版本
 
-### 引用
+
+
+
+### 开始使用
+
+##### 引用框架
 ```
 <dependency>
   <groupId>com.github.silencesu</groupId>
   <artifactId>behavior3java</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 
 ```
 
-### 结果
-- 行为树图
+##### 独立子树加载
 
-![行为树图](src/test/resources/tree.png)
-- 运行结果
+```
 
-![执行结果](src/test/resources/tree_run.png)
+//不包含子树的独立树
+BehaviorTree behaviorTree = B3Loader.loadB3Tree(confJson, extendNodes);
+```
+
+##### 含有子树的工程加载
+
+```
+//加载整个工程文件
+BehaviorTreeProject behaviorTreeProject = B3Loader.loadB3Project(confJson, extendNodes);
+BehaviorTree behaviorTree = behaviorTreeProject.findBTTreeByTitle("b1");//获取名字为b1的属
+
+```
+
+##### 开始运行
+```
+//该行为树所有数据都存储在blackboard中。
+Blackboard blackboard = new Blackboard();
+//驱动tick
+behaviorTree.tick(new Object(), blackboard);
+
+```
+
+ 
+### 测试用例行为树
+
+- ### 行为树b1
+
+![行为树图](src/test/resources/tree1.png)
+
+- ### 行为树b2
+
+![行为树图](src/test/resources/tree2.png)
+
+
 
 
 
@@ -95,19 +133,14 @@ Parallel Hybird Node: 指定数量的Child Node返回True或False后才决定结
 
 
 
+#
 
-
-# 行为树相关学习
+### 行为树相关学习
 - http://www.aisharing.com/archives/90#comment-238610
 - https://www.behaviac.com/concepts/
 - https://note.youdao.com/ynoteshare1/index.html?id=4f46dc2144ea62b55f597630f5e666b4&type=note
 
-# 相关项目
+### 相关项目
 - https://github.com/magicsea/behavior3go
 - https://github.com/behavior3/behavior3js
 - https://github.com/behavior3/behavior3py
-
-# QQ群
-669607652
-# java游戏服务端开发
-72231655

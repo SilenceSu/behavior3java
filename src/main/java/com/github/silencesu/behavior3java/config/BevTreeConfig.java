@@ -32,6 +32,7 @@ public class BevTreeConfig {
     }
     /**
      * 加载项目工程，将整个行为树都加载了
+     *
      * @param path
      * @return
      */
@@ -41,6 +42,18 @@ public class BevTreeConfig {
         JSONArray trees = jsonObj.getJSONArray("trees");
         List<BTTreeCfg> list = trees.toJavaList(BTTreeCfg.class);
         return list;
+    }
+
+
+    /**
+     * 加载整体工程数据
+     *
+     * @param path
+     * @return
+     */
+    public static BTTreeProjectCfg LoadBTTreePorjectCfg(String path) {
+        String json = FileUtil.readFile(path);
+        return JSON.parseObject(json, BTTreeProjectCfg.class);
     }
 
 

@@ -25,6 +25,8 @@ public abstract class BaseNode implements INode, INodeWorker {
     private Map<String, String> parameters;
     private Map<String, String> properties;
 
+    protected BehaviorTreeProject projectInfo;
+
 
     @Override
     public void onEnter(Tick tick) {

@@ -5,7 +5,8 @@ import com.github.silencesu.behavior3java.config.BTTreeCfg;
 import com.github.silencesu.behavior3java.config.DefaultNodes;
 import com.github.silencesu.behavior3java.constant.B3Const;
 import com.github.silencesu.behavior3java.constant.B3Status;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
@@ -20,7 +21,8 @@ import java.util.UUID;
  * @Email Silence.Sx@Gmail.com
  * Created by Silence on 2019/3/2.
  */
-@Data
+@Getter
+@Setter
 @Slf4j
 public class BehaviorTree {
 
@@ -30,6 +32,9 @@ public class BehaviorTree {
     private Map<String, Object> properties = new HashMap<>();
 
     private BaseNode root;
+
+    //project 引用对象
+    private BehaviorTreeProject projectInfo;
 
 
 
@@ -60,14 +65,22 @@ public class BehaviorTree {
             BTNodeCfg nodeCfg = nodeEntry.getValue();
 
             BaseNode node = null;
-            Class<? extends BaseNode> clazz = nodeMaps.get(nodeCfg.getName());
-            if (clazz != null) {
-                try {
-                    node = clazz.newInstance();
-                } catch (InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
+
+            //检查是或否为子树
+            if (nodeCfg.getCategory().equals(B3Const.SUBTREE)) {
+                node = new SubTree();
+            } else {
+                //普通结点加载
+                Class<? extends BaseNode> clazz = nodeMaps.get(nodeCfg.getName());
+                if (clazz != null) {
+                    try {
+                        node = clazz.newInstance();
+                    } catch (InstantiationException | IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
+
 
             if (node == null) {
                 log.error("create node erro:{}", nodeCfg.getName());
@@ -75,6 +88,10 @@ public class BehaviorTree {
             }
 
             node.initialize(nodeCfg);
+
+            if (projectInfo != null) {
+                node.setProjectInfo(projectInfo);
+            }
 
             nodes.put(id, node);
 
