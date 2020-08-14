@@ -40,7 +40,7 @@ public class Loader {
         String confJson = Loader.class.getResource("/").getPath() + "project.b3";
         BehaviorTreeProject behaviorTreeProject = B3Loader.loadB3Project(confJson, extendNodes);
         Blackboard blackboard = new Blackboard();
-        BehaviorTree behaviorTree = behaviorTreeProject.findBTTreeByTitle("b1");
+        BehaviorTree behaviorTree = behaviorTreeProject.findBTTreeByTitle("tree1");
         behaviorTree.tick(new Object(), blackboard);
 
 

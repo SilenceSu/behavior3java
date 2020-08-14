@@ -67,7 +67,7 @@ public class BehaviorTree {
             BaseNode node = null;
 
             //检查是或否为子树
-            if (nodeCfg.getCategory().equals(B3Const.SUBTREE)) {
+            if (nodeCfg.getCategory()!=null && nodeCfg.getCategory().equals(B3Const.SUBTREE)) {
                 node = new SubTree();
             } else {
                 //普通结点加载
